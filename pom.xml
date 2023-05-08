@@ -25,7 +25,7 @@
     <licenses>
         <license>
             <name>GNU General Public License, Version 3</name>
-            <url>https://www.gnu.org/licenses/gpl-3.0.html</url>
+            <url>http://www.gnu.org/licenses/gpl-3.0.html</url>
             <distribution>manual</distribution>
             <comments>A free, copyleft license for software and other kinds of works</comments>
         </license>
@@ -45,6 +45,30 @@
         </developer>
     </developers>
 
+    <properties>
+        <slf4j.version>1.7.25</slf4j.version>
+        <logback.version>1.2.3</logback.version>
+        <json.version>20180130</json.version>
+        <joda-time.version>2.9.9</joda-time.version>
+        <httpclient.version>4.5.5</httpclient.version>
+        <sanmoku.version>0.0.5</sanmoku.version>
+        <sanmoku-feature-ex.version>0.0.1</sanmoku-feature-ex.version>
+        <lang3.version>3.7</lang3.version>
+        <lombok.version>1.16.20</lombok.version>
+        <commons-io.version>2.6</commons-io.version>
+
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <sourceDirectory>${project.basedir}/src/main/java</sourceDirectory>
+    </properties>
+
+    <distributionManagement>
+        <repository>
+            <id>bintray-goldrenard-program-ab</id>
+            <name>goldrenard-program-ab</name>
+            <url>https://api.bintray.com/maven/goldrenard/maven/Program-JB/;publish=1</url>
+        </repository>
+    </distributionManagement>
 
     <dependencies>
         <dependency>
@@ -104,6 +128,23 @@
             <version>4.13.1</version>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <artifactId>net.reduls.sanmoku</artifactId>
+            <groupId>sanmoku-feature-ex</groupId>
+            <version>0.0.1</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/lib/feature-ex.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <artifactId>net.reduls.sanmoku</artifactId>
+            <groupId>sanmoku</groupId>
+            <version>0.0.5</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/lib/analyzer.jar</systemPath>
+        </dependency>
+
     </dependencies>
 
     <profiles>
