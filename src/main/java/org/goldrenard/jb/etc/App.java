@@ -30,7 +30,7 @@ public class App {
         BotConfiguration.BotConfigurationBuilder builder = BotConfiguration
                 .builder()
                 .name("alice2")
-                .action("chat")
+                .action("chat-app")
                 .jpTokenize(false)
                 .graphShortCuts(true);
 
@@ -56,10 +56,12 @@ public class App {
         BotConfiguration configuration = builder.build();
         log.info(configuration.getProgramName());
         Bot bot = new Bot(configuration);
+        System.out.println(bot.getName() + " " + bot.getRootPath());
 
         if (bot.getBrain().getCategories().size() < AB.brain_print_size) {
             bot.getBrain().printGraph();
         }
+        System.out.println(configuration.getAction());
         log.debug("Action = '{}'", configuration.getAction());
 
         switch (configuration.getAction()) {

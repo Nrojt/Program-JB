@@ -129,6 +129,7 @@
             <scope>test</scope>
         </dependency>
 
+
         <dependency>
             <artifactId>net.reduls.sanmoku</artifactId>
             <groupId>sanmoku-feature-ex</groupId>
