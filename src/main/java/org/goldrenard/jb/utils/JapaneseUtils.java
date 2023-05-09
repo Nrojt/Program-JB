@@ -26,7 +26,6 @@ import org.w3c.dom.NodeList;
 
 import java.util.stream.Collectors;
 
-//TODO sanmoku is not working with Tagger
 public class JapaneseUtils {
 
     private static final Logger log = LoggerFactory.getLogger(JapaneseUtils.class);
