@@ -48,6 +48,7 @@ public class IOUtils {
     public String readLine() {
         String result = null;
         try {
+            reader = new BufferedReader(new InputStreamReader(System.in));
             result = reader.readLine();
         } catch (IOException e) {
             log.warn("readLine  error", e);
@@ -57,6 +58,7 @@ public class IOUtils {
 
     public void writeLine(String line) {
         try {
+            writer = new BufferedWriter(new OutputStreamWriter(System.out));
             writer.write(line);
             writer.newLine();
         } catch (IOException e) {
