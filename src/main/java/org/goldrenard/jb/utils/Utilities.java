@@ -86,7 +86,7 @@ public class Utilities {
         String date = CalendarUtils.date();
         try {
             StringBuilder builder = new StringBuilder();
-            for (String part : readFileLines(bot.getConfigPath() + "/copyright.txt")) {
+            for (String part : readFileLines(bot.getConfigPath() + File.separator + "copyright.txt")) {
                 builder.append("<!-- ").append(part).append(" -->\n");
             }
             copyright = builder.toString();

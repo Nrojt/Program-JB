@@ -20,6 +20,7 @@ import lombok.*;
 import org.apache.commons.lang3.StringUtils;
 import org.goldrenard.jb.tags.base.AIMLTagProcessor;
 
+import java.io.File;
 import java.util.List;
 
 @Getter
@@ -29,7 +30,7 @@ public class BotConfiguration {
 
     private static final String DEFAULT_NAME = "alice2";
 
-    private static final String DEFAULT_PATH = "/";
+    private static final String DEFAULT_PATH = File.separator;
 
     private static final String DEFAULT_ACTION = "auto";
 

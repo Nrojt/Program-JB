@@ -95,7 +95,7 @@ public class Chat {
      */
     private void addPredicates() {
         try {
-            predicates.getPredicateDefaults(bot.getConfigPath() + "/predicates.txt");
+            predicates.getPredicateDefaults(bot.getConfigPath() + File.separator + "predicates.txt");
         } catch (Exception e) {
             log.warn("Error reading predicates", e);
         }
@@ -106,7 +106,7 @@ public class Chat {
      */
     private int addTriples() {
         int count = 0;
-        String fileName = bot.getConfigPath() + "/triples.txt";
+        String fileName = bot.getConfigPath() + File.separator + "triples.txt";
         if (log.isTraceEnabled()) {
             log.trace("Loading Triples from {}", fileName);
         }

@@ -30,6 +30,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -103,7 +104,7 @@ public class AB {
     private static int starPatternCnt = 0;
 
     public AB(Bot bot, String sampleFile) {
-        logfile = bot.getRootPath() + "/data/" + sampleFile;
+        logfile = bot.getRootPath() + File.separator + "data" + File.separator + sampleFile;
         log.info("AB with sample file {}", logfile);
         this.bot = bot;
         this.inputGraph = new Graphmaster(bot, "input");

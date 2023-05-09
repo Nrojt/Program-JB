@@ -56,11 +56,11 @@ public class PreProcessor {
         person2 = new SubstitutionResource(bot);
         gender = new SubstitutionResource(bot);
 
-        normal.read(bot.getConfigPath() + "/normal.txt");
-        denormal.read(bot.getConfigPath() + "/denormal.txt");
-        person.read(bot.getConfigPath() + "/person.txt");
-        person2.read(bot.getConfigPath() + "/person2.txt");
-        gender.read(bot.getConfigPath() + "/gender.txt");
+        normal.read(bot.getConfigPath() + File.separator + "normal.txt");
+        denormal.read(bot.getConfigPath() + File.separator + "denormal.txt");
+        person.read(bot.getConfigPath() + File.separator + "person.txt");
+        person2.read(bot.getConfigPath() + File.separator + "person2.txt");
+        gender.read(bot.getConfigPath() + File.separator + "gender.txt");
         if (log.isTraceEnabled()) {
             log.trace("PreProcessor: {} norms, {} denorms, {} persons, {} person2, {} genders ",
                     normal.size(), denormal.size(), person.size(), person2.size(), gender.size());

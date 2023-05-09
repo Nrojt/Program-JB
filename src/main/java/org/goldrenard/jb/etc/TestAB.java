@@ -24,6 +24,8 @@ import org.goldrenard.jb.utils.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.File;
+
 /**
  * Created by User on 5/13/2014.
  */
@@ -76,8 +78,8 @@ public class TestAB {
         Chat chatSession = new Chat(bot, false);
         //        bot.preProcessor.normalizeFile("c:/ab/bots/super/aiml/thats.txt", "c:/ab/bots/super/aiml/normalthats.txt");
         bot.getBrain().nodeStats();
-        IOUtils testInput = new IOUtils(bot.getRootPath() + "/data/lognormal-500.txt", "read");
-        IOUtils testOutput = new IOUtils(bot.getRootPath() + "/data/lognormal-500-out.txt", "write");
+        IOUtils testInput = new IOUtils(bot.getRootPath() + File.separator + "data/lognormal-500.txt", "read");
+        IOUtils testOutput = new IOUtils(bot.getRootPath() + File.separator + "data/lognormal-500-out.txt", "write");
         String textLine = testInput.readLine();
         while (textLine != null) {
             if (textLine.length() < 1) {

@@ -160,15 +160,15 @@ public class Bot {
      */
     private void setAllPaths(BotConfiguration configuration) {
         this.rootPath = configuration.getPath();
-        String botNamePath = this.rootPath + "/bots/" + name;
+        String botNamePath = this.rootPath + File.separator + "bots" + File.separator + name;
         if (log.isTraceEnabled()) {
             log.trace("Init bot: Name = {} Path = {}", name, botNamePath);
         }
-        aimlPath = botNamePath + "/aiml";
-        aimlifPath = botNamePath + "/aimlif";
-        configPath = botNamePath + "/config";
-        setsPath = botNamePath + "/sets";
-        mapsPath = botNamePath + "/maps";
+        aimlPath = botNamePath + File.separator + "aiml";
+        aimlifPath = botNamePath + File.separator + "aimlif";
+        configPath = botNamePath + File.separator + "config";
+        setsPath = botNamePath + File.separator + "sets";
+        mapsPath = botNamePath + File.separator + "maps";
     }
 
     /**
@@ -460,7 +460,7 @@ public class Bot {
      */
     private void addProperties() {
         try {
-            properties.getProperties(configPath + "/properties.txt");
+            properties.getProperties(configPath + File.separator + "properties.txt");
         } catch (Exception e) {
             log.error("Error reading properties {}", e);
         }
