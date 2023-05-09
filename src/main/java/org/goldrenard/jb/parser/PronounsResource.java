@@ -20,6 +20,8 @@ import org.apache.commons.lang3.StringUtils;
 import org.goldrenard.jb.parser.base.CollectionResource;
 import org.goldrenard.jb.utils.Utilities;
 
+import java.io.File;
+
 public class PronounsResource extends CollectionResource<String> {
 
     private final static String PRONOUNS_FILE = "pronouns.txt";
@@ -27,7 +29,7 @@ public class PronounsResource extends CollectionResource<String> {
     @Override
     public int read(String path) {
         Utilities
-                .readFileLines(path + "/" + PRONOUNS_FILE)
+                .readFileLines(path + File.separator + PRONOUNS_FILE)
                 .stream()
                 .filter(StringUtils::isNotEmpty).forEach(this::add);
         return size();

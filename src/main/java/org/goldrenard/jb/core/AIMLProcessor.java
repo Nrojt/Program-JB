@@ -32,6 +32,7 @@ import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
+import java.io.File;
 import java.util.*;
 
 /**
@@ -192,7 +193,7 @@ public class AIMLProcessor {
     public ArrayList<Category> AIMLToCategories(String directory, String aimlFile) {
         try {
             ArrayList<Category> categories = new ArrayList<>();
-            Node root = DomUtils.parseFile(directory + "/" + aimlFile);      // <aiml> tag
+            Node root = DomUtils.parseFile(directory + File.separator + aimlFile);      // <aiml> tag
             String language = bot.getConfiguration().getDefaultLanguage();
             if (root.hasAttributes()) {
                 NamedNodeMap XMLAttributes = root.getAttributes();

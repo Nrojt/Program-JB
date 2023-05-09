@@ -258,7 +258,7 @@ public class Bot {
                                 log.trace("Reading AIML {}", file);
                             }
                             try {
-                                ArrayList<Category> moreCategories = readIFCategories(aimlifPath + "/" + file);
+                                ArrayList<Category> moreCategories = readIFCategories(aimlifPath + File.separator + file);
                                 count += moreCategories.size();
                                 addMoreCategories(file, moreCategories);
                             } catch (Exception e) {
@@ -295,7 +295,7 @@ public class Bot {
      */
     public void readCertainIFCategories(Graphmaster graph, String fileName) {
         int count;
-        String filePath = aimlifPath + "/" + fileName + configuration.getAimlifFileSuffix();
+        String filePath = aimlifPath + File.separator + fileName + configuration.getAimlifFileSuffix();
         File file = new File(filePath);
         if (file.exists()) {
             try {
@@ -344,7 +344,7 @@ public class Bot {
     private void writeIFCategories(ArrayList<Category> cats, String filename) {
         File existsPath = new File(aimlifPath);
         if (existsPath.exists())
-            try (BufferedWriter writer = new BufferedWriter(new FileWriter(aimlifPath + "/" + filename))) {
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter(aimlifPath + File.separator + filename))) {
                 for (Category category : cats) {
                     writer.write(Category.categoryToIF(category));
                     writer.newLine();
@@ -377,7 +377,7 @@ public class Bot {
                     if (fileMap.containsKey(fileName)) {
                         bw = fileMap.get(fileName);
                     } else {
-                        bw = new BufferedWriter(new FileWriter(aimlifPath + "/" + fileName + configuration.getAimlifFileSuffix()));
+                        bw = new BufferedWriter(new FileWriter(aimlifPath + File.separator + fileName + configuration.getAimlifFileSuffix()));
                         fileMap.put(fileName, bw);
                     }
                     bw.write(Category.categoryToIF(c));
@@ -425,7 +425,7 @@ public class Bot {
                         bw = fileMap.get(fileName);
                     } else {
                         String copyright = Utilities.getCopyright(this, fileName);
-                        bw = new BufferedWriter(new FileWriter(aimlPath + "/" + fileName));
+                        bw = new BufferedWriter(new FileWriter(aimlPath + File.separator + fileName));
                         fileMap.put(fileName, bw);
                         bw.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>" + "\n" +
                                 "<aiml>\n");

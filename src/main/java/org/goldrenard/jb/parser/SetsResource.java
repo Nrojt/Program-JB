@@ -84,7 +84,7 @@ public class SetsResource extends NamedResource<AIMLSet> {
                 resource.getHost(), resource.getBotId(), resource.getMaxLength()))
                 : resource.stream().map(String::trim).collect(Collectors.toList());
 
-        String fileName = bot.getSetsPath() + "/" + resource.getName() + "." + SETS_EXTENSION;
+        String fileName = bot.getSetsPath() + File.separator + resource.getName() + "." + SETS_EXTENSION;
 
         try {
             FileUtils.writeLines(new File(fileName), "UTF-8", lines);

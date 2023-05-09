@@ -92,7 +92,7 @@ public class MapsResource extends NamedResource<AIMLMap> {
             }).collect(Collectors.toList());
         }
 
-        String fileName = bot.getMapsPath() + "/" + resource.getName() + "." + MAPS_EXTENSION;
+        String fileName = bot.getMapsPath() + File.separator + resource.getName() + "." + MAPS_EXTENSION;
 
         try {
             FileUtils.writeLines(new File(fileName), "UTF-8", lines);
